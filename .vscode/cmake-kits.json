@@ -1,0 +1,15 @@
+[
+    {
+      "name": "Clang+Ninja",
+      "compilers": {
+        "C": "clang",
+        "CXX": "clang++"
+      },
+      "preferredGenerator": { "name": "Ninja" }
+    },
+    {
+        "name": "Visual Studio 2019",
+        "visualStudio": "Visual Studio Build Tools 2019",
+        "visualStudioArchitecture": "amd64"
+    }
+]

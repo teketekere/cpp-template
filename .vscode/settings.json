@@ -1,0 +1,13 @@
+{
+  "C_Cpp.clang_format_path": "clang-format",
+  "C_Cpp.clang_format_style": "file",
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "clangd.arguments": [
+    "--clang-tidy",
+    "--compile-commands-dir=${workspaceFolder}/build"
+  ],
+  "clangd.onConfigChanged": "restart",
+  "clangd.path": "clangd",
+  "editor.formatOnSave": true,
+  "doxdocgen.generic.paramTemplate": "@param[in] {param} "
+}
