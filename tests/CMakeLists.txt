@@ -5,8 +5,6 @@ project(${CMAKE_PROJECT_NAME}Tests LANGUAGES CXX)
 include(CTest)
 include(GoogleTest)
 
-message(STATUS "${PROJECT_LINK_LIBS}")
-
 # Build
 foreach(file ${test_sources})
     string(REGEX REPLACE "(.*/)([a-zA-Z0-9_ ]+)(\.cpp)" "\\2" test_name ${file})
@@ -19,7 +17,7 @@ foreach(file ${test_sources})
             $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/tests/include>
         PRIVATE
             ${CMAKE_SOURCE_DIR}/tests/src)
-    target_link_libraries(${test_name}_test PRIVATE ${CMAKE_PROJECT_NAME}_LIB ${PROJECT_LINK_LIBS})
+    target_link_libraries(${test_name}_test PRIVATE ${CMAKE_PROJECT_NAME}_lib ${PROJECT_LINK_LIBS})
 
     add_test(
         NAME ${test_name}

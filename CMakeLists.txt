@@ -10,6 +10,7 @@ string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPERCASE)
 
 # Settings
 include(cmake/settings.cmake)
+include(cmake/libs.cmake)
 include(cmake/compile_warnings.cmake)
 include(cmake/sources.cmake)
 
@@ -30,7 +31,6 @@ add_library(${PROJECT_NAME}_lib ${sources} ${headers})
 add_executable(${PROJECT_NAME} ${sources} ${headers})
 configure_project(${PROJECT_NAME}_lib)
 configure_project(${PROJECT_NAME})
-message(STATUS "${PROJECT_LINK_LIBS}")
 
 # Unittest
 if(${PROJECT_NAME}_BUILD_UNITTEST)

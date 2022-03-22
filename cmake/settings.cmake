@@ -27,12 +27,6 @@ if(${PROJECT_NAME}_ENABLE_LTO)
   endif()
 endif()
 
-# Conan
-include(cmake/conan.cmake)
-
-# Link libs
-set(PROJECT_LINK_LIBS ${CONAN_LIBS})
-
 # Print settings
 message(STATUS "${PROJECT_NAME}: v${PROJECT_VERSION}")
 message(STATUS "C++: ${CMAKE_CXX_COMPILER}-${PROJECT_CXX_VERSION}")
