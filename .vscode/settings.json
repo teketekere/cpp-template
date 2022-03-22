@@ -9,5 +9,6 @@
   "clangd.onConfigChanged": "restart",
   "clangd.path": "clangd",
   "editor.formatOnSave": true,
-  "doxdocgen.generic.paramTemplate": "@param[in] {param} "
+  "doxdocgen.generic.paramTemplate": "@param[in] {param} ",
+  "cmake.configureOnOpen": false
 }
