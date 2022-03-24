@@ -1,6 +1,8 @@
 add_subdirectory(${CMAKE_SOURCE_DIR}/thirdparty)
 set(PROJECT_LINK_LIBS
     ${${PROJECT_NAME}_THIRDPARTY})
+set(PROJECT_TEST_LINK_LIBS
+    ${${PROJECT_NAME}_TEST_THIRDPARTY})
 
-# Print
-message(STATUS "libs: ${PROJECT_LINK_LIBS}")
+    message(STATUS "libs: ${PROJECT_LINK_LIBS}")
+message(STATUS "test libs: ${PROJECT_TEST_LINK_LIBS}")

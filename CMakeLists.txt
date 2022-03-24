@@ -25,6 +25,12 @@ function(configure_project  name)
         PRIVATE
             ${CMAKE_CURRENT_SOURCE_DIR}/src)
     target_link_libraries(${name} PRIVATE ${PROJECT_LINK_LIBS})
+    set_target_properties(
+        ${name}
+        PROPERTIES
+        ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE}"
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE}"
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE}")
 endfunction()
 
 add_library(${PROJECT_NAME}_lib ${sources} ${headers})
@@ -34,5 +40,6 @@ configure_project(${PROJECT_NAME})
 
 # Unittest
 if(${PROJECT_NAME}_BUILD_UNITTEST)
+    enable_testing()
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
 endif()

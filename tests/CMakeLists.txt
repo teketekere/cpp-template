@@ -17,7 +17,17 @@ foreach(file ${test_sources})
             $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/tests/include>
         PRIVATE
             ${CMAKE_SOURCE_DIR}/tests/src)
-    target_link_libraries(${test_name}_test PRIVATE ${CMAKE_PROJECT_NAME}_lib ${PROJECT_LINK_LIBS})
+    target_link_libraries(${test_name}_test PRIVATE
+        ${CMAKE_PROJECT_NAME}_lib
+        ${PROJECT_LINK_LIBS}
+        ${PROJECT_TEST_LINK_LIBS})
+
+    set_target_properties(
+        ${test_name}_test
+        PROPERTIES
+        ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE}"
+        LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib/${CMAKE_BUILD_TYPE}"
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin/${CMAKE_BUILD_TYPE}")
 
     add_test(
         NAME ${test_name}
